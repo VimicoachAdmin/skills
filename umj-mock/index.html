@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UMJ Homepage Concept</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1220; --navy-2:#111a2e; --navy-3:#1a2540;
+  --red:#d7262e; --red-dk:#a91b22;
+  --ink:#0f172a; --muted:#5b6475; --line:#e4e7ee; --paper:#ffffff; --soft:#f4f6fa;
+  --on-dark:#e8ecf4; --on-dark-muted:#9aa5bb;
+  --radius:14px; --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,"Noto Sans SC",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin:10px 0 14px}
+.lead{font-size:18px;color:var(--muted);max-width:640px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-dk)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:var(--navy-3)}
+
+/* concept ribbon */
+.ribbon{background:#fff7d6;color:#5c4a00;font-size:13px;text-align:center;padding:8px 16px;border-bottom:1px solid #f0e2a6}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;color:#fff}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:-.01em}
+.logo-mark{width:38px;height:38px;border-radius:9px;background:var(--red);display:grid;place-items:center;font-size:15px}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--on-dark-muted);letter-spacing:.06em}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--on-dark)}
+.nav ul a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid rgba(255,255,255,.2);border-radius:999px;overflow:hidden;font-size:12px}
+.lang button{white-space:nowrap;background:none;border:0;color:var(--on-dark-muted);padding:7px 11px;cursor:pointer;font:inherit}
+.lang button.on{background:#fff;color:var(--navy);font-weight:700}
+@media(max-width:900px){.nav ul{display:none}.nav .btn{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:640px;display:flex;align-items:center;color:#fff;background:var(--navy) url(img/hero.jpg) center right/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,18,32,.96) 0%,rgba(11,18,32,.82) 40%,rgba(11,18,32,.2) 75%,rgba(11,18,32,.05) 100%)}
+.hero{padding:96px 0 80px}
+.hero .wrap{position:relative;width:100%}
+html[lang=zh-CN] .hero h1{font-size:clamp(34px,4.4vw,56px);max-width:760px}
+.hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800;max-width:720px;margin:16px 0 20px}
+.hero h1 em{font-style:normal;color:#ff4a52}
+.hero p{font-size:19px;color:var(--on-dark);max-width:560px;margin-bottom:32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:28px;margin-top:56px;flex-wrap:wrap}
+.hero-badges div{border-left:2px solid var(--red);padding-left:14px}
+.hero-badges b{display:block;font-size:26px;font-weight:800}
+.hero-badges span{font-size:13px;color:var(--on-dark-muted)}
+
+/* trust strip */
+.trust{background:var(--navy-2);color:var(--on-dark-muted);padding:22px 0;font-size:13px}
+.trust .wrap{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between}
+.trust strong{color:#fff;font-weight:600;letter-spacing:.02em}
+.trust .names{display:flex;gap:30px;flex-wrap:wrap;font-weight:700;font-size:15px;color:#c9d1e2;letter-spacing:.03em}
+
+/* audience router */
+.router{padding:96px 0 40px}
+.router-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;transition:.2s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 16px 40px -20px rgba(15,23,42,.25)}
+.card .tag{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.08em;text-transform:uppercase}
+.card h3{font-size:22px;margin:10px 0 10px}
+.card p{color:var(--muted);font-size:15px;flex:1}
+.card .go{margin-top:18px;font-weight:600;font-size:14px}
+@media(max-width:900px){.router-grid{grid-template-columns:1fr}}
+
+/* split sections */
+.split{padding:80px 0}
+.split .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.split.rev .wrap{grid-template-columns:1fr 1.05fr}
+.split.rev .media{order:2}
+.media{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(15,23,42,.45)}
+.media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.region .media img{aspect-ratio:16/10}
+.checks{list-style:none;margin:22px 0 28px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;font-size:15.5px}
+.checks li>span{flex:1}
+.checks li::before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;margin-top:2px}
+.tbc{background:#fff4d1;color:#7a5b00;font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;margin-left:6px;white-space:nowrap}
+@media(max-width:900px){.split .wrap,.split.rev .wrap{grid-template-columns:1fr;gap:36px}.split.rev .media{order:0}}
+
+/* sectors */
+.sectors{background:var(--soft);padding:88px 0}
+.sector-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.sector{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid var(--line)}
+.sector .ico{width:44px;height:44px;border-radius:10px;background:#fde8e9;display:grid;place-items:center;margin-bottom:16px}
+.sector h3{font-size:17px;margin-bottom:6px}
+.sector p{font-size:14px;color:var(--muted)}
+@media(max-width:900px){.sector-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sector-grid{grid-template-columns:1fr}}
+
+/* projects */
+.projects{padding:96px 0}
+.proj-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.proj{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.proj .ph{height:170px;background:linear-gradient(135deg,var(--navy-3),var(--navy));display:flex;align-items:flex-end;padding:16px;color:#fff;position:relative}
+.proj .ph::after{content:"Real site photo goes here";position:absolute;top:14px;right:14px;font-size:11px;color:var(--on-dark-muted);border:1px dashed rgba(255,255,255,.25);padding:3px 8px;border-radius:6px}
+.proj .ph span{font-size:12px;font-weight:700;background:var(--red);padding:4px 10px;border-radius:999px}
+.proj .body{padding:20px}
+.proj h3{font-size:17px;margin-bottom:8px}
+.proj dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px;color:var(--muted)}
+.proj dt{font-weight:600;color:var(--ink)}
+@media(max-width:900px){.proj-grid{grid-template-columns:1fr}}
+
+/* region */
+.region{background:var(--navy);color:#fff;padding:96px 0;overflow:hidden}
+.region .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.region .lead{color:var(--on-dark-muted)}
+.region .media{box-shadow:0 30px 80px -30px rgba(215,38,46,.35)}
+.pins{list-style:none;display:grid;gap:14px;margin-top:28px}
+.pins li{display:flex;gap:14px;align-items:flex-start}
+.pins i{flex:0 0 10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px rgba(215,38,46,.25);margin-top:7px}
+.pins b{display:block}
+.pins span{font-size:14px;color:var(--on-dark-muted)}
+@media(max-width:900px){.region .wrap{grid-template-columns:1fr}}
+
+/* partner */
+.partner .media{max-height:560px}
+.partner-forms{display:flex;gap:12px;flex-wrap:wrap}
+
+/* contact */
+.contact{background:var(--soft);padding:88px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin-top:36px}
+.ch{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.ch .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ch .v{font-size:18px;font-weight:700;margin-top:8px}
+.ch p{font-size:13.5px;color:var(--muted);margin-top:4px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.contact-grid{grid-template-columns:1fr}}
+
+footer{background:var(--navy);color:var(--on-dark-muted);padding:48px 0 32px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#fff}
+
+/* floating whatsapp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;background:#25d366;color:#fff;border-radius:999px;padding:14px 18px;font-weight:700;font-size:14px;display:flex;gap:8px;align-items:center;box-shadow:0 12px 30px -10px rgba(0,0,0,.4)}
+
+@media(max-width:520px){.wrap{padding:0 16px}.hero{padding:64px 0 56px;min-height:560px;background-position:70% center}.hero::before{background:linear-gradient(180deg,rgba(11,18,32,.75),rgba(11,18,32,.95))}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Concept mockup for discussion. Not the live UMJ site. Photos are AI-generated placeholders. Items marked <span class="tbc">TO CONFIRM</span> need UMJ's data.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="logo-mark">UMJ</span><span>UMJ Engineering<small data-i18n="tagline">FIRE PROTECTION SPECIALIST · SINCE 2006</small></span></a>
+    <ul>
+      <li><a href="#contractors" data-i18n="nav1">For Main Contractors</a></li>
+      <li><a href="#sectors" data-i18n="nav2">Sectors</a></li>
+      <li><a href="#projects" data-i18n="nav3">Projects</a></li>
+      <li><a href="#region" data-i18n="nav4">Coverage</a></li>
+      <li><a href="#partner" data-i18n="nav5">Partner With Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button class="on" data-lang="en">EN</button><button data-lang="zh">中文</button><button data-lang="ms">BM</button>
+      </div>
+      <a class="btn btn-red" href="#contact" style="padding:10px 18px" data-i18n="cta_short">Request profile</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="hero_eyebrow">CIDB Grade G7 · Fire Protection Subcontractor</div>
+    <h1 data-i18n-html="hero_h1">Fire protection for <em>data centres</em>, substations and critical facilities.</h1>
+    <p data-i18n="hero_p">The specialist subcontractor main contractors bring in for sprinkler, deluge, detection and gas suppression packages in Malaysia and Indonesia, from design through Bomba certification.</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="#contact" data-i18n="cta1">Download company profile →</a>
+      <a class="btn btn-ghost" href="#projects" data-i18n="cta2">See data centre projects</a>
+    </div>
+    <div class="hero-badges">
+      <div><b>2006</b><span data-i18n="b1">Established</span></div>
+      <div><b>130+</b><span data-i18n="b2">Projects completed</span></div>
+      <div><b>G7</b><span data-i18n="b3">CIDB, no tender limit</span></div>
+      <div><b>MY · ID</b><span data-i18n="b4">Malaysia &amp; Batam</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <strong data-i18n="trust">Trusted on projects delivered with</strong>
+    <div class="names"><span>DayOne</span><span>China State Construction</span><span>Pestech</span><span>TNB</span><span>UNITEN</span><span>Bridge Data Centres</span></div>
+  </div>
+</div>
+
+<section class="router">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="router_eyebrow">Start here</div>
+    <h2 data-i18n="router_h2">Who are you working with us as?</h2>
+    <div class="router-grid">
+      <a class="card" href="#contractors"><span class="tag" data-i18n="r1t">Main contractor / EPC</span><h3 data-i18n="r1h">Bring us in on your fire package</h3><p data-i18n="r1p">Capacity, track record and documents your procurement team needs to pre-qualify us.</p><span class="go" data-i18n="go">Continue →</span></a>
+      <a class="card" href="#contact"><span class="tag" data-i18n="r2t">Building owner / facility</span><h3 data-i18n="r2h">Maintain &amp; certify my building</h3><p data-i18n="r2p">Servicing contracts, fault repair and annual Fire Certificate renewal with Bomba.</p><span class="go" data-i18n="go">Continue →</span></a>
+      <a class="card" href="#partner"><span class="tag" data-i18n="r3t">Subcontractor / technician</span><h3 data-i18n="r3h">Work with UMJ</h3><p data-i18n="r3p">Join our pool of installers and suppliers on data centre and industrial projects.</p><span class="go" data-i18n="go">Continue →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="split" id="contractors">
+  <div class="wrap">
+    <div class="media"><img src="img/team.jpg" alt="Engineers reviewing fire protection drawings on site (AI-generated placeholder)"></div>
+    <div>
+      <div class="eyebrow" data-i18n="c_eyebrow">For main contractors</div>
+      <h2 data-i18n="c_h2">A fire protection partner that fits your programme.</h2>
+      <p class="lead" data-i18n="c_p">We have worked under main contractors on hyperscale data centre blocks in Johor and Batam. We know the coordination, documentation and pace these jobs demand.</p>
+      <ul class="checks">
+        <li><span data-i18n="c1">Full scope: design, supply, install, test &amp; commission, Bomba submission</span></li>
+        <li><span data-i18n="c2">Multiple concurrent data centre blocks for DayOne campuses</span></li>
+        <li><span><span data-i18n="c3">Site team size &amp; concurrent project capacity</span><span class="tbc">TO CONFIRM</span></span></li>
+        <li><span><span data-i18n="c4">Safety record, QHSE &amp; ISO certifications</span><span class="tbc">TO CONFIRM</span></span></li>
+        <li><span><span data-i18n="c5">Mandarin, English &amp; Malay-speaking project coordination</span><span class="tbc">TO CONFIRM</span></span></li>
+      </ul>
+      <a class="btn btn-dark" href="#contact" data-i18n="c_cta">Get our pre-qualification pack →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sectors" id="sectors">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="s_eyebrow">Sectors</div>
+    <h2 data-i18n="s_h2">Built for facilities that cannot go down.</h2>
+    <div class="sector-grid">
+      <div class="sector"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d7262e" stroke-width="2"><rect x="3" y="3" width="18" height="6" rx="1"/><rect x="3" y="15" width="18" height="6" rx="1"/><path d="M7 6h.01M7 18h.01"/></svg></div><h3 data-i18n="s1h">Data centres</h3><p data-i18n="s1p">Deluge, pre-action, release panels and clean agent for white space and plant.</p></div>
+      <div class="sector"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d7262e" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3 data-i18n="s2h">Power &amp; substations</h3><p data-i18n="s2p">132 kV GIS substations, FM-200 suppression and hydrant networks.</p></div>
+      <div class="sector"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d7262e" stroke-width="2"><path d="M3 21V10l6 4V10l6 4V6l6 4v11z"/></svg></div><h3 data-i18n="s3h">Industrial</h3><p data-i18n="s3p">Sprinkler, CO₂ and hose reel systems for factories and warehouses.</p></div>
+      <div class="sector"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d7262e" stroke-width="2"><path d="M4 21V5l8-3 8 3v16M9 21v-5h6v5"/></svg></div><h3 data-i18n="s4h">Campuses &amp; commercial</h3><p data-i18n="s4p">Upgrades, retrofits and maintenance for occupied buildings.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="proj-head">
+      <div><div class="eyebrow" data-i18n="p_eyebrow">Selected projects</div><h2 data-i18n="p_h2">Track record on critical infrastructure.</h2></div>
+      <a class="btn btn-dark" href="#" data-i18n="p_cta">All 130+ projects →</a>
+    </div>
+    <div class="proj-grid">
+      <div class="proj"><div class="ph"><span>Data centre · Batam</span></div><div class="body"><h3>DayOne NDP-C, Nongsa</h3><dl><dt>Client</dt><dd>Longmotive (M) Sdn Bhd</dd><dt>Duration</dt><dd>17 months, two phases</dd></dl></div></div>
+      <div class="proj"><div class="ph"><span>Data centre · Johor</span></div><div class="body"><h3>DayOne Block K, Nusajaya</h3><dl><dt>Client</dt><dd>Longmotive (M) Sdn Bhd</dd><dt>Duration</dt><dd>6 months</dd></dl></div></div>
+      <div class="proj"><div class="ph"><span>Substation · Kedah</span></div><div class="body"><h3>FM-200 suppression, Nur Kulim</h3><dl><dt>Client</dt><dd>Pestech Transmission Sdn Bhd</dd><dt>Duration</dt><dd>9 months</dd></dl></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="region" id="region">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-i18n="g_eyebrow">Coverage</div>
+      <h2 data-i18n="g_h2">Delivering across the Johor–Batam data centre corridor.</h2>
+      <p class="lead" data-i18n="g_p">Headquartered in Kajang, with project teams mobilised wherever our clients build.</p>
+      <ul class="pins">
+        <li><i></i><div><b>Klang Valley</b><span>HQ · TNB NLDC Bangsar · UNITEN Bangi</span></div></li>
+        <li><i></i><div><b>Johor</b><span>Kempas · Nusajaya · Sedenak · Kulai data centre campuses</span></div></li>
+        <li><i></i><div><b>Batam, Indonesia</b><span>Nongsa Digital Park: NDP-B, NDP-C</span></div></li>
+        <li><i></i><div><b>Northern region</b><span>Kulim, Kedah · Bagan Datuk, Perak</span></div></li>
+      </ul>
+    </div>
+    <div class="media"><img src="img/map.jpg" alt="Regional coverage illustration (concept only, not geographically accurate)"></div>
+  </div>
+</section>
+
+<section class="split rev partner" id="partner">
+  <div class="wrap">
+    <div class="media"><img src="img/technician.jpg" alt="Technician installing sprinkler pipework (AI-generated placeholder)"></div>
+    <div>
+      <div class="eyebrow" data-i18n="w_eyebrow">Partner with us</div>
+      <h2 data-i18n="w_h2">Build Malaysia's critical infrastructure with UMJ.</h2>
+      <p class="lead" data-i18n="w_p">We are growing our network of subcontractors, suppliers and skilled technicians for data centre and industrial projects.</p>
+      <ul class="checks">
+        <li><span data-i18n="w1">Steady pipeline of large, well-run projects</span></li>
+        <li><span><span data-i18n="w2">Clear scopes, safety-first sites, on-time payment terms</span><span class="tbc">TO CONFIRM</span></span></li>
+        <li><span data-i18n="w3">Pipe fitters, electricians, panel wiremen, supervisors</span></li>
+      </ul>
+      <div class="partner-forms">
+        <a class="btn btn-red" href="#contact" data-i18n="w_cta1">Register as subcontractor</a>
+        <a class="btn btn-dark" href="#contact" data-i18n="w_cta2">View open roles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ct_eyebrow">Contact</div>
+    <h2 data-i18n="ct_h2">Talk to the right person, in your language.</h2>
+    <div class="contact-grid">
+      <div class="ch"><div class="k">WhatsApp</div><div class="v">+60 1x-xxx xxxx</div><p>Project enquiries <span class="tbc">TO CONFIRM</span></p></div>
+      <div class="ch"><div class="k">WeChat</div><div class="v">UMJ_Engineering</div><p>中文项目对接 <span class="tbc">TO CONFIRM</span></p></div>
+      <div class="ch"><div class="k">Office</div><div class="v">03-9010 4243</div><p>Mon–Fri, 9am–6pm</p></div>
+      <div class="ch"><div class="k">Email</div><div class="v" style="font-size:16px">info@umjengineering.com</div><p>Tenders &amp; RFQs</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>UMJ Engineering Sdn. Bhd.</b> (738219-H)<br>No 15-2, Jalan SL 1/12, Bandar Sungai Long, 43000 Kajang, Selangor</div>
+    <div>CIDB G7 · Reg. No. 0120121019-SL146395<br>© 2026 UMJ Engineering. Concept mockup.</div>
+  </div>
+</footer>
+
+<a class="wa" href="#contact">💬 WhatsApp us</a>
+
+<script>
+const T={
+ zh:{tagline:"消防工程专业承包商 · 始于2006",nav1:"总包合作",nav2:"行业领域",nav3:"项目案例",nav4:"服务区域",nav5:"合作加盟",cta_short:"索取公司简介",
+  hero_eyebrow:"CIDB G7级 · 消防专业分包商",hero_h1:"为<em>数据中心</em>、变电站及关键设施提供消防系统。",
+  hero_p:"总包单位信赖的消防专业分包：喷淋、雨淋、火灾探测及气体灭火系统，覆盖马来西亚与印尼，从设计到消防局(Bomba)验收一站完成。",
+  cta1:"下载公司简介 →",cta2:"查看数据中心项目",b1:"成立年份",b2:"已完成项目",b3:"CIDB G7，无投标上限",b4:"马来西亚与巴淡岛",trust:"合作项目方包括",
+  router_eyebrow:"从这里开始",router_h2:"您希望以何种身份与我们合作？",r1t:"总包 / EPC",r1h:"邀请我们承接消防分包",r1p:"提供采购部门资格预审所需的产能、业绩与资质文件。",
+  r2t:"业主 / 物业",r2h:"维护保养与年检",r2p:"保养合同、故障维修及消防证书年度更新。",r3t:"分包商 / 技术人员",r3h:"加入UMJ",r3p:"加入我们的数据中心与工业项目施工及供应商团队。",go:"继续 →",
+  c_eyebrow:"致总包单位",c_h2:"配合您工期的消防合作伙伴。",c_p:"我们曾在柔佛和巴淡岛为总包单位承建超大规模数据中心，熟悉此类项目的协调、文件与节奏要求。",
+  c1:"全范围服务：设计、供货、安装、测试调试、消防报批",c2:"同时承接DayOne多个数据中心楼栋",c3:"现场团队规模与同时在建项目能力",c4:"安全记录、QHSE与ISO认证",c5:"中文、英文、马来文项目协调",c_cta:"获取资格预审资料 →",
+  s_eyebrow:"行业领域",s_h2:"专为不能停机的设施而建。",s1h:"数据中心",s1p:"机房及机电区的雨淋、预作用、释放控制盘及洁净气体灭火。",s2h:"电力与变电站",s2p:"132kV GIS变电站、FM-200气体灭火及消火栓管网。",s3h:"工业厂房",s3p:"工厂与仓库的喷淋、CO₂及消防卷盘系统。",s4h:"园区与商业",s4p:"在用建筑的升级、改造与维护。",
+  p_eyebrow:"精选项目",p_h2:"关键基础设施业绩。",p_cta:"全部130+项目 →",g_eyebrow:"服务区域",g_h2:"深耕柔佛—巴淡岛数据中心走廊。",g_p:"总部位于加影，项目团队随客户需要调动。",
+  w_eyebrow:"合作加盟",w_h2:"与UMJ共建马来西亚关键基础设施。",w_p:"我们正在扩充数据中心与工业项目的分包商、供应商及技术人员网络。",w1:"稳定的大型项目来源",w2:"范围清晰、安全第一、按时付款",w3:"管道工、电工、控制盘配线工、现场主管",w_cta1:"注册成为分包商",w_cta2:"查看招聘职位",
+  ct_eyebrow:"联系我们",ct_h2:"用您的语言，联系对的人。"},
+ ms:{tagline:"PAKAR PERLINDUNGAN KEBAKARAN · SEJAK 2006",nav1:"Kontraktor Utama",nav2:"Sektor",nav3:"Projek",nav4:"Liputan",nav5:"Bekerjasama",cta_short:"Minta profil",
+  hero_eyebrow:"CIDB Gred G7 · Subkontraktor Perlindungan Kebakaran",hero_h1:"Perlindungan kebakaran untuk <em>pusat data</em>, pencawang dan fasiliti kritikal.",
+  hero_p:"Subkontraktor pakar yang dipilih kontraktor utama untuk pakej pemercik, banjiran, pengesanan dan pemadaman gas di Malaysia dan Indonesia, dari reka bentuk hingga pensijilan Bomba.",
+  cta1:"Muat turun profil syarikat →",cta2:"Lihat projek pusat data",b1:"Ditubuhkan",b2:"Projek siap",b3:"CIDB, tiada had tender",b4:"Malaysia & Batam",trust:"Dipercayai dalam projek bersama",
+  router_eyebrow:"Mula di sini",router_h2:"Anda bekerjasama dengan kami sebagai?",r1t:"Kontraktor utama / EPC",r1h:"Lantik kami untuk pakej kebakaran",r1p:"Kapasiti, rekod dan dokumen untuk pra-kelayakan pasukan perolehan anda.",
+  r2t:"Pemilik bangunan",r2h:"Selenggara & pensijilan",r2p:"Kontrak servis, pembaikan dan pembaharuan Sijil Bomba tahunan.",r3t:"Subkontraktor / juruteknik",r3h:"Bekerja dengan UMJ",r3p:"Sertai rangkaian pemasang dan pembekal kami.",go:"Teruskan →",
+  c_eyebrow:"Untuk kontraktor utama",c_h2:"Rakan perlindungan kebakaran yang sesuai dengan jadual anda.",c_p:"Kami telah bekerja di bawah kontraktor utama untuk blok pusat data di Johor dan Batam.",
+  c1:"Skop penuh: reka bentuk, bekalan, pemasangan, pengujian, penyerahan Bomba",c2:"Beberapa blok pusat data DayOne serentak",c3:"Saiz pasukan tapak & kapasiti projek serentak",c4:"Rekod keselamatan, QHSE & ISO",c5:"Koordinasi dalam Mandarin, Inggeris & Melayu",c_cta:"Dapatkan pakej pra-kelayakan →",
+  s_eyebrow:"Sektor",s_h2:"Dibina untuk fasiliti yang tidak boleh berhenti.",s1h:"Pusat data",s1p:"Banjiran, pra-tindakan, panel pelepasan dan agen bersih.",s2h:"Kuasa & pencawang",s2p:"Pencawang GIS 132 kV, FM-200 dan rangkaian pili bomba.",s3h:"Perindustrian",s3p:"Sistem pemercik, CO₂ dan gelung hos.",s4h:"Kampus & komersial",s4p:"Naik taraf dan penyelenggaraan bangunan.",
+  p_eyebrow:"Projek pilihan",p_h2:"Rekod prestasi infrastruktur kritikal.",p_cta:"Semua 130+ projek →",g_eyebrow:"Liputan",g_h2:"Menyampaikan di koridor pusat data Johor–Batam.",g_p:"Beribu pejabat di Kajang, pasukan projek digerakkan ke mana-mana.",
+  w_eyebrow:"Bekerjasama",w_h2:"Bina infrastruktur kritikal Malaysia bersama UMJ.",w_p:"Kami mengembangkan rangkaian subkontraktor, pembekal dan juruteknik mahir.",w1:"Saluran projek besar yang stabil",w2:"Skop jelas, keselamatan diutamakan, bayaran tepat masa",w3:"Tukang paip, juruelektrik, pendawai panel, penyelia",w_cta1:"Daftar sebagai subkontraktor",w_cta2:"Lihat jawatan kosong",
+  ct_eyebrow:"Hubungi",ct_h2:"Bercakap dengan orang yang tepat, dalam bahasa anda."}
+};
+const EN={};
+document.querySelectorAll('[data-i18n]').forEach(e=>EN[e.dataset.i18n]=e.textContent);
+document.querySelectorAll('[data-i18n-html]').forEach(e=>EN[e.dataset.i18nHtml]=e.innerHTML);
+function setLang(l){
+  const d=l==='en'?EN:T[l];
+  document.documentElement.lang=l==='zh'?'zh-CN':l;
+  document.querySelectorAll('[data-i18n]').forEach(e=>{const v=d[e.dataset.i18n];if(v)e.textContent=v});
+  document.querySelectorAll('[data-i18n-html]').forEach(e=>{const v=d[e.dataset.i18nHtml];if(v)e.innerHTML=v});
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+</script>
+</body>
+</html>
